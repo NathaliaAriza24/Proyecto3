@@ -1,0 +1,103 @@
+body {  
+   margin: 0;  
+   background: black;  
+   overflow: hidden;  
+}  
+
+#wrapper {  
+   height: 100vh;  
+   display: flex;  
+   flex-direction: column;  
+   flex-wrap: wrap;  
+   align-items: center;  
+   justify-content: space-evenly;  
+}  
+
+#game {  
+   height: 70vh; /* Cambiado para dejar espacio para el botón */  
+   max-height: 700px;  
+   display: flex;  
+   flex-wrap: wrap;  
+   align-items: center;  
+   justify-content: center;  
+   margin-bottom: 20px; /* Añadir margen para el botón */  
+}  
+
+#stats {  
+   color: white;  
+   padding: 1rem;  
+   text-align: center;  
+   font-size: 2rem; /* Tamaño de fuente reducido para más espacio */  
+}  
+
+.card {  
+   width: 100px;  
+   height: 140px;  
+   margin: 1rem;  
+   position: relative;  
+   transition: transform 0.8s; /* Aumente la duración de la animación */  
+   transform-style: preserve-3d;  
+   cursor: pointer;  
+}  
+
+.card.active {  
+   transform: rotateY(180deg);  
+}  
+
+.card::after {  
+   content: '';  
+   position: absolute;  
+   inset: 0;  
+   background: #209d7b;  
+   transition: 0.25s;  
+   transform: rotateY(0deg);  
+   backface-visibility: hidden;  
+}  
+
+.card.active::after {  
+   transform: rotateY(90deg);  
+}  
+
+.card div {  
+   width: 100%;  
+   height: 100%;  
+   border-radius: 1rem;  
+   display: flex;  
+   align-items: center;  
+   justify-content: center;  
+   position: absolute;  
+   backface-visibility: hidden;  
+   pointer-events: none;  
+}  
+
+.card .face {  
+   background: #05d1fe;  
+   transform: rotateY(180deg);  
+   color: black;  
+    
+   width: 100px;  
+   height: 140px;  
+   object-fit: cover;
+}  
+
+.card .back {  
+   border: 3px solid #05d1fe;  
+   background: url(img/back.png) center / contain no-repeat; /* Cambiar esta línea según tu dirección de imagen */  
+}  
+
+#restart {  
+   padding: 10px 20px;  
+   font-size: 1.5rem;  
+   color: white;  
+   background-color: #209d7b;   
+   border: none;  
+   border-radius: 5px;  
+   cursor: pointer;  
+}  
+
+#restart:hover {  
+   background-color: #05d1fe;  
+}  
+
+
+  
